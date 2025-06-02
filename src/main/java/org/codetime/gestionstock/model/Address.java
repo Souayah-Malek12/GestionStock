@@ -4,16 +4,16 @@ import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Embeddable
+@AllArgsConstructor
 @EqualsAndHashCode
+@Embeddable
+
 @Table(name = "address")
 public class Address {
 

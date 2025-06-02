@@ -1,33 +1,31 @@
-package org.codetime.gestionstock.model;
+    package org.codetime.gestionstock.model;
 
 
-import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+    import jakarta.persistence.*;
+    import lombok.*;
+    import lombok.experimental.SuperBuilder;
 
-import java.time.Instant;
-import java.util.List;
+    import java.time.Instant;
+    import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-@Entity
-@Table(name="commande fournisseur")
-@EqualsAndHashCode(callSuper = true)
-public class CommandeFournisseur extends AbstractEntity{
+    @Data
+    @AllArgsConstructor
+    @NoArgsConstructor
+    @Entity
+    @Table(name="commande fournisseur")
+    @EqualsAndHashCode(callSuper = true)
+    public class CommandeFournisseur extends AbstractEntity{
 
-    @Column(name="code")
-    private String code;
+        @Column(name="code")
+        private String code;
 
-    @Column(name="dateCommande")
-    private Instant dateCommande;
+        @Column(name="dateCommande")
+        private Instant dateCommande;
 
-    @ManyToOne
-    @JoinColumn(name = "idFournisseur")
-    private Fournisseur fournisseur;
+        @ManyToOne
+        @JoinColumn(name = "idFournisseur")
+        private Fournisseur fournisseur;
 
-    @OneToMany(mappedBy = "commandeFournisseur")
-    private List<LigneCommandeFournisseur>  ligneCommandeFournisseurList;
-}
+        @OneToMany(mappedBy = "commandeFournisseur")
+        private List<LigneCommandeFournisseur>  ligneCommandeFournisseurs;
+    }

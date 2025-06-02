@@ -5,10 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
 @Data
 @AllArgsConstructor
@@ -23,6 +21,6 @@ public class LigneCommandeClient extends AbstractEntity{
     private Article article;
 
     @ManyToOne
-    @JoinColumn(name = "idcommandeclient")
+    @JoinColumn(name = "commandeClient")
     private CommandeClient commandeClient;
 }

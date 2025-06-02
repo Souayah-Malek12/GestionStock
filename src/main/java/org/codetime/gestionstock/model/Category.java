@@ -2,28 +2,31 @@ package org.codetime.gestionstock.model;
 
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
+import java.time.Instant;
 import java.util.List;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(name="Category")
+@Entity
+@Table(name = "category")
 public class Category extends AbstractEntity{
-    @Column(name="code")
+    @Column(name = "code")
     private String code;
 
-    @Column(name="designation")
+    @Column(name = "designation")
     private String designation;
 
-    @OneToMany(mappedBy ="category")
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
+
+    @OneToMany(mappedBy = "category")
     private List<Article> articles;
+
 
 
 }

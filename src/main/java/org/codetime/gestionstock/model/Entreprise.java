@@ -1,14 +1,11 @@
 package org.codetime.gestionstock.model;
 
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -21,9 +18,27 @@ public class Entreprise extends AbstractEntity{
     @Column(name = "nom")
     private String nom;
 
-    @OneToMany(mappedBy = "entreprise")
-    private CommandeClient commandeClient;
+    @Column(name = "description")
+    private String description;
+
+    @Embedded
+    private Address addresse;
+
+    @Column(name = "codefiscal")
+    private String codeFiscal;
+
+    @Column(name = "photo")
+    private String photo;
+
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "numtel")
+    private String numTel;
+
+    @Column(name = "siteweb")
+    private String steWeb;
 
     @OneToMany(mappedBy = "entreprise")
-    private CommandeFournisseur commandeFournisseur;
+    private List<Utilisateur> utilisateurs;
 }

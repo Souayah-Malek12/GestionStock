@@ -1,18 +1,39 @@
 package org.codetime.gestionstock.model;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import jakarta.persistence.*;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+
+import java.math.BigDecimal;
+import java.time.Instant;
 
 @Data
-@AllArgsConstructor
 @NoArgsConstructor
-@Entity
+@AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-@Table(name="MvtStk")
-public class MvtStk extends AbstractEntity{
+@Entity
+@Table(name = "mvtstk")
+public class MvtStk extends AbstractEntity {
+
+    @Column(name = "datemvt")
+    private Instant dateMvt;
+
+    @Column(name = "quantite")
+    private BigDecimal quantite;
+
+    @ManyToOne
+    @JoinColumn(name = "idarticle")
+    private Article article;
+
+    @Column(name = "typemvt")
+    @Enumerated(EnumType.STRING)
+    private TypeMvtStk typeMvt;
+
+    @Column(name = "sourcemvt")
+    @Enumerated(EnumType.STRING)
+    private SourceMvtStk sourceMvt;
+
+    @Column(name = "identreprise")
+    private Integer idEntreprise;
 }
