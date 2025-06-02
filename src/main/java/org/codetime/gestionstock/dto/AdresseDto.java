@@ -4,9 +4,11 @@ import lombok.Builder;
 import lombok.Data;
 import org.codetime.gestionstock.model.Address;
 
+import java.io.Serializable;
+
 @Data
 @Builder
-public class AdresseDto {
+public class AdresseDto  implements Serializable {
     private String address1;
     private String address2;
     private String ville;
