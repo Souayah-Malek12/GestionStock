@@ -7,6 +7,8 @@ import org.codetime.gestionstock.model.LigneCommandeClient;
 @Data
 @Builder
 public class LigneCommandeClientDto {
+    private Integer id;
+
     private ArticleDto article;
     private CommandeClientDto commandeClient;
 

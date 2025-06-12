@@ -3,12 +3,16 @@ package org.codetime.gestionstock.dto;
 import lombok.Builder;
 import lombok.Data;
 import org.codetime.gestionstock.model.CommandeFournisseur;
+import org.codetime.gestionstock.model.EtatCommande;
 
 import java.time.Instant;
 
 @Data
 @Builder
 public class CommandeFournisseurDto {
+    private Integer id;
+    private EtatCommande etatCommande;
+
     private String code;
     private Instant dateCommande;
     private FournisseurDto fournisseur;

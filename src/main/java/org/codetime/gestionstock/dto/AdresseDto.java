@@ -9,6 +9,8 @@ import java.io.Serializable;
 @Data
 @Builder
 public class AdresseDto  implements Serializable {
+    private Integer id;
+
     private String address1;
     private String address2;
     private String ville;

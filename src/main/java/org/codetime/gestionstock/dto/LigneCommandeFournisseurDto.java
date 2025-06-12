@@ -7,6 +7,8 @@ import org.codetime.gestionstock.model.LigneCommandeFournisseur;
 @Data
 @Builder
 public class LigneCommandeFournisseurDto {
+    private Integer id;
+
     private ArticleDto article;
     private CommandeFournisseurDto commandeFournisseur;
 

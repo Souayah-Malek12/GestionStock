@@ -7,6 +7,8 @@ import org.codetime.gestionstock.model.Entreprise;
 @Data
 @Builder
 public class EntrepriseDto {
+    private Integer id;
+
     private String nom;
     private String description;
     private AdresseDto addresse;

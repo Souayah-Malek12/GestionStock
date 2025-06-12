@@ -3,12 +3,15 @@ package org.codetime.gestionstock.dto;
 import lombok.Builder;
 import lombok.Data;
 import org.codetime.gestionstock.model.CommandeClient;
+import org.codetime.gestionstock.model.EtatCommande;
 
 import java.time.Instant;
 
 @Data
 @Builder
 public class CommandeClientDto {
+    private Integer id;
+    private EtatCommande etatCommande;
     private String code;
     private Instant dateCommande;
     private ClientDto client;

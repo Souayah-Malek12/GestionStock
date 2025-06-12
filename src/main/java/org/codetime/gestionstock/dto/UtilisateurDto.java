@@ -2,13 +2,18 @@ package org.codetime.gestionstock.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.codetime.gestionstock.model.Utilisateur;
 
 import java.time.Instant;
 
 @Data
 @Builder
+
 public class UtilisateurDto {
+    private Integer id;
+
     private String nom;
     private String prenom;
     private String email;

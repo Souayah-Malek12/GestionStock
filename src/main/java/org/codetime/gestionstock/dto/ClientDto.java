@@ -7,6 +7,7 @@ import org.codetime.gestionstock.model.Client;
 @Data
 @Builder
 public class ClientDto {
+    private Integer id;
     private String nom;
     private String prenom;
     private AdresseDto address;
@@ -41,4 +42,6 @@ public class ClientDto {
         client.setNumTel(dto.getNumTel());
         return client;
     }
+
+
 }

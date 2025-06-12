@@ -7,6 +7,8 @@ import org.codetime.gestionstock.model.Roles;
 @Data
 @Builder
 public class RolesDto {
+    private Integer id;
+
     private String roleName;
     private UtilisateurDto utilisateur;
 
