@@ -48,8 +48,8 @@ public class ArticleServiceImpl implements ArticleService {
         ArticleDto dto = ArticleDto.fromEntity(article.get());
 
         return Optional.of(ArticleDto.fromEntity(article.get())).orElseThrow(()-> new EntityNotFoundException("article not found "+ id+"non trouvé"+
-                        ErrorCodes.ARTICLE_NOT_FOUND)
-                );
+                ErrorCodes.ARTICLE_NOT_FOUND)
+        );
     }
 
 
