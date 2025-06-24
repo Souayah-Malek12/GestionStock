@@ -2,12 +2,17 @@ package org.codetime.gestionstock.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.codetime.gestionstock.model.Ventes;
 
 import java.time.Instant;
+import java.util.List;
 
 @Data
 @Builder
+@Getter
+@Setter
 public class VentesDto {
     private Integer id;
 
@@ -15,6 +20,8 @@ public class VentesDto {
     private Instant dateVente;
     private String commentaire;
     private Integer idEntreprise;
+
+    private List<LigneVenteDto> ligneVentes;
 
     public static VentesDto fromEntity(Ventes entity) {
         if (entity == null) return null;
