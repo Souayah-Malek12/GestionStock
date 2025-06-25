@@ -2,6 +2,8 @@ package org.codetime.gestionstock.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.codetime.gestionstock.model.CommandeClient;
 import org.codetime.gestionstock.model.EtatCommande;
 
@@ -9,6 +11,8 @@ import java.time.Instant;
 
 @Data
 @Builder
+@Getter
+@Setter
 public class CommandeClientDto {
     private Integer id;
     private EtatCommande etatCommande;
@@ -36,5 +40,28 @@ public class CommandeClientDto {
         entity.setDateCommande(dto.getDateCommande());
         entity.setClient(ClientDto.toEntity(dto.getClient()));
         return entity;
+    }
+    public boolean isCommandeLivree() {
+        return EtatCommande.LIVREE.equals(this.etatCommande);
+    }
+
+    public ClientDto getClient() {
+        return client;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public EtatCommande getEtatCommande() {
+        return etatCommande;
+    }
+
+    public Instant getDateCommande() {
+        return dateCommande;
+    }
+
+    public String getCode() {
+        return code;
     }
 }

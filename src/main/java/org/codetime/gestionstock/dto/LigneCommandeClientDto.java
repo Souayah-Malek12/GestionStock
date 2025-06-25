@@ -2,10 +2,14 @@ package org.codetime.gestionstock.dto;
 
 import lombok.Builder;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.codetime.gestionstock.model.LigneCommandeClient;
 
 @Data
 @Builder
+@Getter
+@Setter
 public class LigneCommandeClientDto {
     private Integer id;
 
